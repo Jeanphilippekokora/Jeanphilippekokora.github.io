@@ -182,6 +182,16 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,
 .eng{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .eng span{padding:10px 16px;border-radius:40px;border:1px solid var(--line);font-size:15px}
 
+/* terrain */
+.terrain{background:var(--soft)}
+.photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.photos figure{margin:0;position:relative;border-radius:24px;overflow:hidden;background:var(--line);height:clamp(360px,34vw,460px)}
+.photos img{width:100%;height:100%;object-fit:cover}
+.photos figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(14,59,44,.9);color:#e6f0ea;padding:12px 16px;border-radius:16px;font-size:14px;line-height:1.4}
+.photos figcaption b{display:block;color:#fff;font-size:15px}
+@media(max-width:900px){.photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.photos{grid-template-columns:minmax(0,1fr)}.photos figure{height:420px}}
+
 /* contact */
 .contact{background:var(--or);color:var(--ivory)}
 .c-in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:end}
@@ -231,6 +241,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <div class="route" id="route">
       <a href="#depart">Départ</a>
       <a href="#batir">Bâtir</a>
+      <a href="#terrain">Terrain</a>
       <a href="#creer">Créer</a>
       <a href="#transmettre">Transmettre</a>
       <a href="#chercher">Chercher</a>
@@ -285,6 +296,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         <li><b>Plus de 50 clients dans 6 pays</b><span>Entreprises, institutions, ambassades, ONG et startups, accompagnés de la conception à la mise en ligne.</span></li>
         <li><b>Une reconnaissance institutionnelle</b><span>Première startup subsaharienne labellisée StartupAct en Tunisie, puis contribution au programme national Industrie 4.0 de Côte d'Ivoire avec l'ONUDI.</span></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band terrain" id="terrain">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="stop"><i></i>Escale · Sur le terrain</div><h2>Des rencontres qui font avancer les projets</h2></div>
+      <p class="lead">Partenariats, séances de travail et événements : quelques moments qui racontent la façon dont je travaille, avec les autres.</p>
+    </div>
+    <div class="photos">
+      <figure class="p-a"><img src="img/key1.webp" alt="Jean Philippe Kokora scelle un partenariat au centre d'affaires KEY Abidjan" style="object-position:50% 20%"><figcaption><b>KEY Abidjan, 2024</b>Partenariat avec le centre d'affaires, qui accueille désormais AMONARC.</figcaption></figure>
+      <figure class="p-b"><img src="img/key2.webp" alt="Séance de travail au centre d'affaires KEY Abidjan" style="object-position:40% 60%"><figcaption><b>Séance de travail</b>Visite et échanges dans les locaux de KEY Abidjan.</figcaption></figure>
+      <figure class="p-c"><img src="img/mua.webp" alt="Jean Philippe Kokora au Modèle de l'Union Africaine" style="object-position:50% 15%"><figcaption><b>Modèle de l'Union Africaine</b>Représentant de la Côte d'Ivoire.</figcaption></figure>
+      <figure class="p-d"><img src="img/boubou.webp" alt="Jean Philippe Kokora en tenue traditionnelle" style="object-position:50% 15%"><figcaption><b>Fondateur d'AMONARC</b>Entre Tunis et Abidjan.</figcaption></figure>
     </div>
   </div>
 </section>
