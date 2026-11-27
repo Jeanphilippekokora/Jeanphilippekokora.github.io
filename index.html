@@ -174,7 +174,7 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,
 .dg p{color:var(--mut);font-size:15px}
 
 /* honours */
-.hon{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.hon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .hn{border-radius:22px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
 .hn img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--soft)}
 .hn div{padding:18px}
@@ -184,13 +184,24 @@ nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,
 
 /* terrain */
 .terrain{background:var(--soft)}
-.photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.photos figure{margin:0;position:relative;border-radius:24px;overflow:hidden;background:var(--line);height:clamp(360px,34vw,460px)}
-.photos img{width:100%;height:100%;object-fit:cover}
-.photos figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(14,59,44,.9);color:#e6f0ea;padding:12px 16px;border-radius:16px;font-size:14px;line-height:1.4}
-.photos figcaption b{display:block;color:#fff;font-size:15px}
-@media(max-width:900px){.photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.photos{grid-template-columns:minmax(0,1fr)}.photos figure{height:420px}}
+.grp{margin-top:clamp(36px,4vw,56px)}
+.grp:first-of-type{margin-top:0}
+.grp-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px;margin-bottom:18px;padding-top:18px;border-top:1px solid var(--line)}
+.grp-h h3{font-size:clamp(21px,2vw,26px);font-weight:800}
+.grp-h p{color:var(--mut);max-width:56ch;font-size:15px}
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:240px;gap:16px;grid-auto-flow:dense}
+.bento.two{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:400px}
+.bento figure{margin:0;position:relative;border-radius:22px;overflow:hidden;background:var(--line)}
+.bento img{width:100%;height:100%;object-fit:cover}
+.bento .big{grid-column:span 2;grid-row:span 2}
+.bento .tall{grid-row:span 2}
+.bento .wide{grid-column:span 2}
+.bento .poster{grid-row:span 3;background:#e9ecf6}
+.bento .poster img{object-fit:contain;padding:14px 14px 100px}
+.bento figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(14,59,44,.9);color:#e6f0ea;padding:11px 15px;border-radius:15px;font-size:14px;line-height:1.4}
+.bento figcaption b{display:block;color:#fff;font-size:15px}
+@media(max-width:760px){.bento .poster{grid-row:span 2}.bento,.bento.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-auto-rows:260px}.bento .big,.bento .wide{grid-column:span 2;grid-row:span 1}.bento .tall{grid-row:span 2}}
+@media(max-width:520px){.bento,.bento.two{grid-template-columns:minmax(0,1fr);grid-auto-rows:340px}.bento .big,.bento .wide{grid-column:span 1}.bento .tall{grid-row:span 1;height:440px}}
 
 /* contact */
 .contact{background:var(--or);color:var(--ivory)}
@@ -304,13 +315,34 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   <div class="wrap">
     <div class="sec-head">
       <div><div class="stop"><i></i>Escale · Sur le terrain</div><h2>Des rencontres qui font avancer les projets</h2></div>
-      <p class="lead">Partenariats, séances de travail et événements : quelques moments qui racontent la façon dont je travaille, avec les autres.</p>
+      <p class="lead">Diplomatie de la jeunesse, entrepreneuriat, partenariats : quelques moments qui racontent comment je travaille, avec les autres.</p>
     </div>
-    <div class="photos">
-      <figure class="p-a"><img src="img/key1.webp" alt="Jean Philippe Kokora scelle un partenariat au centre d'affaires KEY Abidjan" style="object-position:50% 20%"><figcaption><b>KEY Abidjan, 2024</b>Partenariat avec le centre d'affaires, qui accueille désormais AMONARC.</figcaption></figure>
-      <figure class="p-c"><img src="img/mua.webp" alt="Jean Philippe Kokora au Modèle de l'Union Africaine" style="object-position:50% 15%"><figcaption><b>Modèle de l'Union Africaine</b>Représentant de la Côte d'Ivoire.</figcaption></figure>
-      <figure class="p-e"><img src="img/costume.webp" alt="Portrait de Jean Philippe Kokora en costume" style="object-position:50% 20%"><figcaption><b>Ingénieur et doctorant</b>Faculté des Sciences de Tunis.</figcaption></figure>
-      <figure class="p-d"><img src="img/boubou.webp" alt="Jean Philippe Kokora en tenue traditionnelle" style="object-position:50% 15%"><figcaption><b>Fondateur d'AMONARC</b>Entre Tunis et Abidjan.</figcaption></figure>
+
+    <div class="grp">
+      <div class="grp-h"><h3>Modèle de l'Union Africaine</h3><p>Délégué de la Côte d'Ivoire, engagé sur les questions de sécurité et de climat.</p></div>
+      <div class="bento">
+        <figure class="big"><img src="img/mua-securite.webp" alt="Jean Philippe Kokora en séance de travail au Modèle de l'Union Africaine" style="object-position:60% 25%"><figcaption><b>Président délégué du Comité technique spécialisé sur la sécurité</b>Modèle de l'Union Africaine.</figcaption></figure>
+        <figure class="tall"><img src="img/climat.webp" alt="Jean Philippe Kokora au Forum Africain pour la Justice Climatique" style="object-position:50% 20%"><figcaption><b>Forum Africain pour la Justice Climatique</b>Avec la Friedrich-Ebert-Stiftung.</figcaption></figure>
+        <figure class="wide"><img src="img/mua-sommet.webp" alt="Salle du sommet du Modèle de l'Union Africaine" style="object-position:50% 50%"><figcaption><b>Délégué au sommet</b>Représentant de la Côte d'Ivoire au sommet du Modèle de l'Union Africaine.</figcaption></figure>
+        <figure class=""><img src="img/mua.webp" alt="Jean Philippe Kokora avec le drapeau ivoirien" style="object-position:50% 15%"><figcaption><b>Représentant de la Côte d'Ivoire</b>Depuis 2022.</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="grp">
+      <div class="grp-h"><h3>Entrepreneuriat et prise de parole</h3><p>Conférences et panels pour partager l'expérience d'AMONARC avec les jeunes entrepreneurs.</p></div>
+      <div class="bento">
+        <figure class="big"><img src="img/seu-panel.webp" alt="Jean Philippe Kokora panéliste au lancement de SE.U Tunisie" style="object-position:50% 45%"><figcaption><b>Panéliste au lancement officiel de SE.U Tunisie, 2025</b>Créer et piloter une entreprise à distance, Université Centrale, Tunis.</figcaption></figure>
+        <figure class="poster"><img src="img/jeja.webp" alt="Affiche du webinaire JEJA acte 5 avec Jean Philippe Kokora" style="object-position:50% 50%"><figcaption><b>Conférencier aux JEJA, acte 5</b>Entrepreneuriat et technologies numériques pour une Afrique autonome.</figcaption></figure>
+        <figure class="wide"><img src="img/seu-groupe.webp" alt="Jean Philippe Kokora avec les membres de SE.U Tunisie" style="object-position:50% 30%"><figcaption><b>Conférencier en entrepreneuriat étudiant</b>Avec l'équipe de Student Entrepreneurs Union, Tunisie.</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="grp">
+      <div class="grp-h"><h3>Partenariats et communication</h3><p>Des collaborations qui ouvrent de nouvelles portes à AMONARC.</p></div>
+      <div class="bento two">
+        <figure class=""><img src="img/key1.webp" alt="Jean Philippe Kokora scelle un partenariat au centre d'affaires KEY Abidjan" style="object-position:50% 20%"><figcaption><b>KEY Abidjan, 2024</b>Partenariat avec le centre d'affaires, qui accueille AMONARC.</figcaption></figure>
+        <figure class=""><img src="img/fsterab.webp" alt="Jean Philippe Kokora lors d'un événement FSTERAB" style="object-position:60% 30%"><figcaption><b>Directeur de la communication de FSTERAB</b>Lors d'un événement de l'organisation.</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -416,9 +448,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <div class="hn"><img src="img/startupact.webp" alt="Certificat de label StartupAct"><div><h3>Label StartupAct</h3><p>Décerné par l'État tunisien à AMONARC.</p></div></div>
       <div class="hn"><img src="img/itaun.webp" alt="Certificat d'appréciation ITAUN"><div><h3>Certificat ITAUN</h3><p>Certificat d'appréciation pour ma contribution.</p></div></div>
       <div class="hn"><img src="img/award.webp" alt="Cérémonie de remise d'awards"><div><h3>Award de la Diaspora</h3><p>Diaspora ivoirienne en Tunisie.</p></div></div>
-      <div class="hn"><img src="img/mua.webp" alt="Jean Philippe Kokora au Modèle de l'Union Africaine" style="object-position:50% 20%"><div><h3>Modèle de l'Union Africaine</h3><p>Représentant de la Côte d'Ivoire depuis 2022.</p></div></div>
     </div>
     <div class="eng">
+      <span>Délégué de la Côte d'Ivoire au Modèle de l'Union Africaine, depuis 2022</span>
       <span>Bénévole à l'Ambassade de Côte d'Ivoire en Tunisie, 2022–2023</span>
       <span>Panéliste Riyeda, jeunes entrepreneurs, 2021</span>
       <span>Prix d'excellence, Lycée de Bingerville, 2017</span>
